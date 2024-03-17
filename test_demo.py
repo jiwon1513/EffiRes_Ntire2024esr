@@ -61,7 +61,7 @@ def select_dataset(data_dir, mode):
             (
                 p.replace("_HR", "_LR").replace(".png", "x4.png"),
                 p
-            ) for p in sorted(glob.glob(os.path.join(data_dir, "LSDIR_DIV2K_test_HR\\*.png")))
+            ) for p in sorted(glob.glob(os.path.join(data_dir, "LSDIR_DIV2K_test_HR/*.png")))
         ]
 
     # inference on the LSDIR_DIV2K_valid set
@@ -70,7 +70,7 @@ def select_dataset(data_dir, mode):
             (
                 p.replace("_HR", "_LR").replace(".png", "x4.png"),
                 p
-            ) for p in sorted(glob.glob(os.path.join(data_dir, "DIV2K_LSDIR_valid_HR\\*.png")))
+            ) for p in sorted(glob.glob(os.path.join(data_dir, "LSDIR_DIV2K_valid_HR/*.png")))
         ]
     else:
         raise NotImplementedError(f"{mode} is not implemented in select_dataset")
