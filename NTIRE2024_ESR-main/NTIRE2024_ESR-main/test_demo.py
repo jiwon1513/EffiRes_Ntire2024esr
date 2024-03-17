@@ -28,21 +28,10 @@ def select_model(args, device):
         model = RLFN_Prune()
         model.load_state_dict(torch.load(model_path), strict=True)
 
-    elif model_id == 14:
-        from models.team14_EffiRes import EffiRes
-        name, data_range = f"{model_id:02}_EffiRes", 255.0
-        model_path = os.path.join('model_zoo', 'team14_EffiRes.pth')
-        model = EffiRes()
-
-        ckpt = torch.load(model_path,map_location='cuda:0')
-        model.load_state_dict(ckpt, strict=True)
-
-
     # elif model_id == 1:
     #     from models.team[Your_Team_ID]_[Model_Name] import [Model_Name]
     #     ...
-    else: #team14_EffiRes
-        
+    else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
     # print(model)
@@ -61,7 +50,7 @@ def select_dataset(data_dir, mode):
             (
                 p.replace("_HR", "_LR").replace(".png", "x4.png"),
                 p
-            ) for p in sorted(glob.glob(os.path.join(data_dir, "LSDIR_DIV2K_test_HR\\*.png")))
+            ) for p in sorted(glob.glob(os.path.join(data_dir, "LSDIR_DIV2K_test_HR/*.png")))
         ]
 
     # inference on the LSDIR_DIV2K_valid set
@@ -70,7 +59,7 @@ def select_dataset(data_dir, mode):
             (
                 p.replace("_HR", "_LR").replace(".png", "x4.png"),
                 p
-            ) for p in sorted(glob.glob(os.path.join(data_dir, "DIV2K_LSDIR_valid_HR\\*.png")))
+            ) for p in sorted(glob.glob(os.path.join(data_dir, "LSDIR_DIV2K_valid_HR/*.png")))
         ]
     else:
         raise NotImplementedError(f"{mode} is not implemented in select_dataset")
@@ -292,9 +281,9 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("NTIRE2024-EfficientSR")
-    parser.add_argument("--data_dir", default="C:/Users/homin/Downloads/ESR_challenge", type=str)
-    parser.add_argument("--save_dir", default="C:/Users/homin/Downloads/ESR_challenge/results", type=str)
-    parser.add_argument("--model_id", default=14, type=int)
+    parser.add_argument("--data_dir", default="../", type=str)
+    parser.add_argument("--save_dir", default="../results", type=str)
+    parser.add_argument("--model_id", default=0, type=int)
     parser.add_argument("--include_test", action="store_true", help="Inference on the DIV2K test set")
     parser.add_argument("--ssim", action="store_true", help="Calculate SSIM")
 
