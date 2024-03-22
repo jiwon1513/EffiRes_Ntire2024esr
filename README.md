@@ -1,9 +1,5 @@
 # [NTIRE 2024 Challenge on Efficient Super-Resolution](https://cvlai.net/ntire/2024/) @ [CVPR 2024](https://cvpr.thecvf.com/)
 
-<div align=center>
-<img src="https://github.com/Amazingren/NTIRE2024_ESR/blob/main/figs/logo.png" width="400px"/> 
-</div>
-
 ## How to test the baseline model?
 
 1. `git clone https://github.com/jiwon1513/EffiRes_Ntire2024esr.git`
