@@ -1,6 +1,6 @@
 # [NTIRE 2024 Challenge on Efficient Super-Resolution](https://cvlai.net/ntire/2024/) @ [CVPR 2024](https://cvpr.thecvf.com/)
 ## Our FactSheet
-'https://drive.google.com/file/d/1w3g6ltV8WU-vuj6XKlGs0pHEwHpKnyqx/view?usp=drive_link'
+https://drive.google.com/file/d/1w3g6ltV8WU-vuj6XKlGs0pHEwHpKnyqx/view?usp=drive_link
 ## How to test the baseline model?
 
 1. `git clone https://github.com/jiwon1513/EffiRes_Ntire2024esr.git`
